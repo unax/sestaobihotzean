@@ -39,6 +39,8 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
         var url = 'http://www.sestaobihotzean.eus/participa-movil';
         var form_data = {
             titulo: $("#titulo").val(),
+            lati: $("#lat").val(),
+            longi: $("#lon").val(),
             categoria: $("#categoria").val(),
             texto: $("#texto").val(),
             is_ajax: 1
@@ -46,8 +48,8 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
         //alert($("#titulo").val());
         console.log("Hacemos el POST");
         $.post(url, form_data, function(data) {
-            alert("POST hecho");
-            alert(data);
+            console.log("POST hecho");
+            console.log(data);
         });
         var ft = new FileTransfer();
         console.log("Subimos la imagen");
