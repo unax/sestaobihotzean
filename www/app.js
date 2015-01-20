@@ -41,7 +41,7 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
             titulo: $("#titulo").val(),
             lati: $("#lat").val(),
             longi: $("#lon").val(),
-            categoria: $("#categoria").val(),
+            categoria: $("#categoria").val(), 
             texto: $("#texto").val(),
             is_ajax: 1
         };
