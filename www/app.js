@@ -49,7 +49,7 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
         console.log("Hacemos el POST");
         $.post(url, form_data, function(data) {
             console.log("POST hecho");
-            console.log(data);
+           alert(data);
         });
         var ft = new FileTransfer();
         console.log("Subimos la imagen");
