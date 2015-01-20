@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content=" " />
+<meta name="Description" content=" " />
+
+<!--Declare page as mobile friendly --> 
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+<!-- Declare page as iDevice WebApp friendly -->
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<!-- iDevice WebApp Splash Screen, Regular Icon, iPhone, iPad, iPod Retina Icons -->
+<link rel="apple-touch-icon" sizes="114x114" href="images/splash/splash-icon.png"> 
+<link rel="apple-touch-startup-image" href="images/splash/splash-screen.png" media="screen and (max-device-width: 320px)" /> 
+<link rel="apple-touch-startup-image" href="images/splash/splash-screen@2x.png" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" /> 
+<link rel="apple-touch-startup-image" href="images/splash/splash-screen@3x.png" sizes="640x1096">
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
+
+
+<!-- Page Title -->
+<title>Jordi Monedero</title>
+<script src="scripts/jquery.min.js" type="text/javascript"></script> 
+<script src="scripts/jquery-ui-min.js" type="text/javascript"></script>
+<!-- Stylesheet Load -->
+
+<link href="styles/style.css" rel="stylesheet" type="text/css">
+<link href="styles/framework-style.css" rel="stylesheet" type="text/css">
+<link href="styles/framework.css" rel="stylesheet" type="text/css">
+<link href="styles/icons.css" rel="stylesheet" 	type="text/css">
+<link href="styles/retina.css" rel="stylesheet" type="text/css" media="only screen and (-webkit-min-device-pixel-ratio: 2)" />
+<!-- JS propio -->
+<script type="text/javascript" charset="utf-8" src="app.js"></script> 
+
+</head>
+<body>
+<div id="preloader"  style="display:none;">
+	<div id="status">
+    	<p class="center-text">
+			<em>Enviando foto...</em>
+            <em>La carga depende de la velocidad de tu conexión</em>
+        </p>
+       </div>
+</div>
+
+<div class="header-decoration"></div>
+
+<div class="landing-header">
+	<img class="landing-logo replace-2x" src="images/logo/logo.png"  alt="img" width="148">
+</div>
+
+<center> 
+    <form id="noticia" action="" method="post">
+ 
+            <input type="hidden" name="URI" id="URI" value="" />
+            <input type="text" name="titulo" id="titulo" placeholder="Título del post" required="required" />
+            <select id="categoria" name="categoria"> 
+                <option value="1">Amigos</option> 
+                <option value="2">Cabeza loca</option> 
+                <option value="3">Cine</option> 
+                <option value="4">De todo un poco</option>
+                <option value="5">Foto del día</option>
+                <option value="6">Informática</option> 
+            </select>
+            <br>
+            <textarea name="texto" id="texto" placeholder="Texto del post" required="required"></textarea>
+            <input type="hidden" name="lat" id="lat" placeholder="Latitud"/>
+            <input type="hidden" name="lon" id="lon" placeholder="Longitud"/> 
+       </form>
+</center>
+
+<div class="header-decoration"></div>
+<center id="camaras">
+    <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);" class="demo-button button-minimal black-minimal">Elige foto</button>
+    <button onclick="capturePhoto();" class="demo-button button-minimal black-minimal">Haz foto</button>
+    <button onclick="uploadPhoto();" class="demo-button button-minimal black-minimal" id="botonenvio"  style="display:none;">Enviar</button>
+    <button onclick="cancelar();" class="demo-button button-minimal black-minimal"  id="botoncancela"  style="display:none;">Cancelar</button>
+    <img src="" id="image" width="150"  style="display:none;"><br>
+</center>
+</body>
+</html>
