@@ -69,7 +69,7 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
         //
         var largeImage = document.getElementById('image');
 
-        // Unhide image elements
+        // Unhide image elements 
         //
         largeImage.style.display = 'block';
             $("#image").show();
@@ -84,14 +84,14 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
 
     function capturePhoto() {
       // Take picture using device camera and retrieve image 
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 10, allowEdit: true,
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, allowEdit: true,
 
         destinationType: destinationType.FILE_URI });
     }
 
     function getPhoto(source) {
       // Retrieve image file location from specified source
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 10, 
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 
         destinationType: destinationType.FILE_URI,
         sourceType: source });
     }
