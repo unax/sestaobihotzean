@@ -49,7 +49,7 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
         console.log("Hacemos el POST");
         $.post(url, form_data, function(data) {
             console.log("POST hecho");
-           alert(data);
+         //  alert(data);
         });
         var ft = new FileTransfer();
         console.log("Subimos la imagen");
@@ -103,7 +103,7 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
     // Called if something bad happens.
     // 
     function onFail(message) {
-      alert('Failed because: ' + message);
+   //   alert('Failed because: ' + message);
     }
     function win(r) {
         $("#status").fadeIn(); 
@@ -125,7 +125,7 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
             //$("#camaras").slideUp("slow");
             
             }, delay);
-			alert('Enviado!');
+			//alert('Enviado!');
 			location.href="index.html";
     }
         function cancelar() { 
