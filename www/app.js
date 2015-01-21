@@ -84,7 +84,7 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
 
     function capturePhoto() {
       // Take picture using device camera and retrieve image 
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80,
 	  correctOrientation: true,
         targetWidth: 800,
         targetHeight: 800,
@@ -94,7 +94,7 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
 
     function getPhoto(source) {
       // Retrieve image file location from specified source
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,       
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80,       
         targetWidth: 800,
         targetHeight: 800,
         destinationType: destinationType.FILE_URI,
