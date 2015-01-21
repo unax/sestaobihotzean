@@ -49,7 +49,7 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
         console.log("Hacemos el POST");
         $.post(url, form_data, function(data) {
             console.log("POST hecho");
-         //  alert(data);
+           alert(data);
         });
         var ft = new FileTransfer();
         console.log("Subimos la imagen");
@@ -84,7 +84,8 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
 
     function capturePhoto() {
       // Take picture using device camera and retrieve image 
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 100,         correctOrientation: true,
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+	  correctOrientation: true,
         targetWidth: 800,
         targetHeight: 800,
 
@@ -93,7 +94,7 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
 
     function getPhoto(source) {
       // Retrieve image file location from specified source
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 100,         correctOrientation: true,
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,       
         targetWidth: 800,
         targetHeight: 800,
         destinationType: destinationType.FILE_URI,
@@ -103,7 +104,7 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
     // Called if something bad happens.
     // 
     function onFail(message) {
-   //   alert('Failed because: ' + message);
+      alert('Failed because: ' + message);
     }
     function win(r) {
         $("#status").fadeIn(); 
@@ -125,7 +126,7 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
             //$("#camaras").slideUp("slow");
             
             }, delay);
-			//alert('Enviado!');
+			alert('Enviado!');
 			location.href="index.html";
     }
         function cancelar() { 
