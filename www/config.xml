@@ -32,7 +32,7 @@
     <preference name="permissions" value="INTERNET" />
 
     <!-- Customize your app and platform with the preference element. -->
-    <preference name="phonegap-version"           value="3.6.0" />     <!-- all: current version of PhoneGap -->
+    <preference name="phonegap-version"           value="3.4.0" />     <!-- all: current version of PhoneGap -->
     <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
@@ -76,9 +76,13 @@
     <icon src="icon.png"         gap:platform="ios"        width="144" height="144" />
 
 
- 
-	<gap:splash src="ver.png" gap:platform="android" gap:qualifier="port-xhdpi">
-	<gap:splash src="hor.png" gap:platform="android" gap:qualifier="land-xhdpi">
+    <!-- Define app splash screen for each platform.      --> 
+    <gap:splash src="ver.png"  gap:platform="android" gap:density="ldpi" />
+    <gap:splash src="hor.png"  gap:platform="android" gap:density="mdpi" />
+    <gap:splash src="ver.png"  gap:platform="android" gap:density="hdpi" />
+    <gap:splash src="ver.png" gap:platform="android" gap:density="port-xhdpi" />
+    <gap:splash src="hor.png" gap:platform="android" gap:density="land-xhdpi" />
+
     <gap:splash src="ver.png"    gap:platform="ios"     width="320" height="480" />
     <gap:splash src="ver.png" gap:platform="ios"     width="640" height="960" />
     <gap:splash src="ver.png"      gap:platform="ios"     width="768" height="1024" />
