@@ -39,6 +39,7 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
         var url = 'http://www.sestaobihotzean.eus/participa-movil';
         var form_data = {
             titulo: $("#titulo").val(),
+            email: $("#email").val(),
             lati: $("#lat").val(),
             longi: $("#lon").val(),
             categoria: $("#categoria").val(), 
@@ -49,7 +50,7 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
         console.log("Hacemos el POST");
         $.post(url, form_data, function(data) {
             console.log("POST hecho");
-           alert(data);
+       //    alert(data);
         });
         var ft = new FileTransfer();
         console.log("Subimos la imagen");
@@ -84,8 +85,7 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
 
     function capturePhoto() {
       // Take picture using device camera and retrieve image 
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80,
-	  correctOrientation: true,
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80,         correctOrientation: true,
         targetWidth: 800,
         targetHeight: 800,
 
@@ -94,7 +94,7 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
 
     function getPhoto(source) {
       // Retrieve image file location from specified source
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80,       
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80,         correctOrientation: true,
         targetWidth: 800,
         targetHeight: 800,
         destinationType: destinationType.FILE_URI,
@@ -104,7 +104,7 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
     // Called if something bad happens.
     // 
     function onFail(message) {
-      alert('Failed because: ' + message);
+    //  alert('Failed because: ' + message);
     }
     function win(r) {
         $("#status").fadeIn(); 
@@ -120,13 +120,14 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
             $("#status").fadeOut(); 
             $("#preloader").fadeOut(1500); 
             $("#titulo").val("");
+            $("#email").val("");
             $("#categoria").val("");
             $("#texto").val("");
             $("#image").attr("src","second.jpg");
             //$("#camaras").slideUp("slow");
             
             }, delay);
-			alert('Enviado!');
+		//	alert('Enviado!');
 			location.href="index.html";
     }
         function cancelar() { 
