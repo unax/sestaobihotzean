@@ -26,6 +26,7 @@
   var str = imageURI;
 //var imageURI = str.replace("file:///var/", "file://localhost/var/"); 
 alert (imageURI);
+imageURI = imageURI.encode(imageURI);
         var options = new FileUploadOptions();
         options.fileKey="file";
         options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
