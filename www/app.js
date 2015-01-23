@@ -29,6 +29,7 @@ alert (imageURI);
         var options = new FileUploadOptions();
         options.fileKey="file";
         options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+		alert(options.fileName);
         options.mimeType="image/jpeg";
 
         var params = new Object();
