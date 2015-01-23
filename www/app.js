@@ -26,7 +26,6 @@
   var str = imageURI;
 //var imageURI = str.replace("file:///var/", "file://localhost/var/"); 
 alert (imageURI);
-imageURI = imageURI.encode(imageURI);
         var options = new FileUploadOptions();
         options.fileKey="file";
         options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
@@ -118,6 +117,7 @@ imageURI = imageURI.encode(imageURI);
     }
 
     function getPhoto(source) {
+	alert(source);
       // Retrieve image file location from specified source
 	     navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
         destinationType: destinationType.FILE_URI,
