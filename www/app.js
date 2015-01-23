@@ -94,9 +94,7 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
 
     function getPhoto(source) {
       // Retrieve image file location from specified source
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80,         correctOrientation: true,
-        targetWidth: 800,
-        targetHeight: 800,
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80,
         destinationType: destinationType.FILE_URI,
         sourceType: source });
     }
