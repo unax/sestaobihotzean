@@ -130,7 +130,7 @@ alert (imageURI);
         $("#status").fadeIn(); 
         $("#preloader").show();
         $("#preloader").fadeIn(3500);
-        
+        alert(r.response);
         console.log("Code = " + r.responseCode);
         console.log("Response = " + r.response);
         console.log("Sent = " + r.bytesSent);
