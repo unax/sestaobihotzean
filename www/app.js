@@ -24,6 +24,7 @@
          var imageURI = document.getElementById('image').src;
   var str = imageURI;
 var imageURI = str.replace("file:///var/", "file://localhost/var/"); 
+alert (imageURI);
         var options = new FileUploadOptions();
         options.fileKey="file";
         options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
@@ -48,13 +49,34 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
         };
         //alert($("#titulo").val());
         console.log("Hacemos el POST");
-        $.post(url, form_data, function(data) {
-            console.log("POST hecho");
+   //     $.post(url, form_data, function(data) {
+    //        console.log("POST hecho");
        //    alert(data);
-        });
+      //  });
+	  
+	  
+	  //correccion
+	          var options = new FileUploadOptions();
+        options.fileKey = "file";
+        options.fileName = imageURI.substr(imageURI.lastIndexOf('/')+1);
+        options.mimeType = "image/jpeg";
+
+        options.params = {
+            titulo: document.getElementById("titulo").value,
+            email: document.getElementById("email").value,
+            lati: document.getElementById("lat").value,
+            longi: document.getElementById("lon").value,
+            texto: document.getElementById("texto").value,
+            categoria: document.getElementById("categoria").value
+        }
+		   var ft = new FileTransfer();
+        ft.upload(imageURI, encodeURI("http://www.sestaobihotzean.eus/participa-movil"), win, onFail, options);
+   
+		//correccion
+		/*
         var ft = new FileTransfer();
         console.log("Subimos la imagen");
-        ft.upload(imageURI, encodeURI("http://www.sestaobihotzean.eus/participa-movil"), win, onFail, options);
+        ft.upload(imageURI, encodeURI(""), win, onFail, options); */
         var pic1 = document.getElementById("image");
         // que hace esto??? if (image == typeof('image')) return;
         pic1.src = imageURI;
@@ -94,9 +116,9 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
 
     function getPhoto(source) {
       // Retrieve image file location from specified source
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80,
+	     navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
         destinationType: destinationType.FILE_URI,
-        sourceType: source });
+        sourceType: source }); 
     }
 
     // Called if something bad happens.
