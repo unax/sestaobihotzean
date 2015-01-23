@@ -23,7 +23,7 @@
 		        $("#preloader").show();
          var imageURI = document.getElementById('image').src;
   var str = imageURI;
-var imageURI = str.replace("file:///var/", "file://localhost/var/"); 
+//var imageURI = str.replace("file:///var/", "file://localhost/var/"); 
 alert (imageURI);
         var options = new FileUploadOptions();
         options.fileKey="file";
