@@ -87,7 +87,7 @@
     <gap:splash src="ver.png"     gap:platform="ios"     width="1024" height="768" />
     
     
-    <gap:splash src="ver.png" width="480" height="320" />
+    <gap:splash src="hor.png" width="480" height="320" />
 	<gap:splash src="hor.png" width="320" height="480" />
 
     <access origin="*" />
