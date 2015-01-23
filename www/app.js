@@ -23,14 +23,16 @@
 		        $("#preloader").show();
          var imageURI = document.getElementById('image').getAttribute("src");
 		  
-  var str = imageURI;
-//var imageURI = str.replace("file:///var/", "file://localhost/var/"); 
-alert (imageURI);
+		var str = imageURI;
+		var imageURI = str.replace("file:///var/", "file://localhost/var/"); 
+		alert (imageURI);
         var options = new FileUploadOptions();
         options.fileKey="file";
         options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
 		alert(options.fileName);
         options.mimeType="image/jpeg";
+
+ 
 
         var params = new Object();
         params.value1 = "test";
@@ -119,9 +121,10 @@ alert (imageURI);
     function getPhoto(source) {
 	alert(source);
       // Retrieve image file location from specified source
-	     navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80,
+	     navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80, targetWidth: 800,
+        targetHeight: 800,
         destinationType: destinationType.FILE_URI,
-        sourceType: 'PHOTOLIBRARY' }); 
+        sourceType: source }); 
     }
 
     // Called if something bad happens.
