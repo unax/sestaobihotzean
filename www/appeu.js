@@ -153,7 +153,7 @@
             //$("#camaras").slideUp("slow");
             
             }, delay);
-		 	alert('Enviado!');
+		 	alert('Bidalia!');
 			location.href="index.html";
     }
         function cancelar() { 
