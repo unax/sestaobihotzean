@@ -52,19 +52,11 @@
             is_ajax: 1
         };
 		
-		if ( document.getElementById("texto").value || document.getElementById("titulo").value==""  ){
-		alert ("Izenburua eta textua derrigorrezko zelaiak dira");
+		if ( document.getElementById("texto").value=="" || document.getElementById("titulo").value==""  ){
+		alert ("El título y el texto son campos obligatorios");
 		return false;
-		
-		}
-        //alert($("#titulo").val());
-        console.log("Hacemos el POST");
-   //     $.post(url, form_data, function(data) {
-    //        console.log("POST hecho");
-       //    alert(data);
-      //  });
-	  
-	  
+ 
+		}else{
 	  //correccion
 	          var options = new FileUploadOptions();
         options.fileKey = "file";
@@ -81,7 +73,7 @@
         }
 		   var ft = new FileTransfer();
         ft.upload(imageURI, encodeURI("http://www.sestaobihotzean.eus/participa-movil"), win, onFail, options);
-   
+   }
 		//correccion
 		/*
         var ft = new FileTransfer();
