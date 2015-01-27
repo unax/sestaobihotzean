@@ -25,11 +25,11 @@
 		  
 		var str = imageURI;
 		var imageURI = str.replace("file:///var/", "file://localhost/var/"); 
-		alert (imageURI);
+	//	alert (imageURI);
         var options = new FileUploadOptions();
         options.fileKey="file";
         options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
-		alert(options.fileName);
+	//	alert(options.fileName);
         options.mimeType="image/jpeg";
 
  
@@ -51,6 +51,12 @@
             texto: $("#texto").val(),
             is_ajax: 1
         };
+		
+		if ( document.getElementById("texto").value || document.getElementById("titulo").value==""  ){
+		alert ("Izenburua eta textua derrigorrezko zelaiak dira");
+		return false;
+		
+		}
         //alert($("#titulo").val());
         console.log("Hacemos el POST");
    //     $.post(url, form_data, function(data) {
@@ -119,7 +125,7 @@
     }
 
     function getPhoto(source) {
-	alert(source);
+ 
       // Retrieve image file location from specified source
 	     navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80, targetWidth: 800,
         targetHeight: 800,
@@ -136,7 +142,7 @@
         $("#status").fadeIn(); 
         $("#preloader").show();
         $("#preloader").fadeIn(3500);
-        alert(r.response);
+     
         console.log("Code = " + r.responseCode);
         console.log("Response = " + r.response);
         console.log("Sent = " + r.bytesSent);
@@ -153,7 +159,7 @@
             //$("#camaras").slideUp("slow");
             
             }, delay);
-		 	alert('Bidalia!');
+		 	alert('Bidalita! Eskerrik asko!');
 			location.href="index.html";
     }
         function cancelar() { 
