@@ -77,11 +77,10 @@
  <preference name="orientation" value="portrait" />
  <gap:splash src="ver.png" width="480" height="320" /><!-- este va bien en horizontal -->
 
-    <gap:splash src="hor.png"  gap:platform="android" gap:density="ldpi" />
     <gap:splash src="hor.png"  gap:platform="android" gap:density="mdpi" />
-    <gap:splash src="hor.png"  gap:platform="android" gap:density="hdpi" /> 
-    <!-- Define app splash screen for each platform.     
 
+    <!-- Define app splash screen for each platform.     
+    <gap:splash src="hor.png"  gap:platform="android" gap:density="hdpi" /> 
     <gap:splash src="hor.png"    gap:platform="ios"     width="320" height="480" />
     <gap:splash src="hor.png" gap:platform="ios"     width="640" height="960" />
     <gap:splash src="hor.png"      gap:platform="ios"     width="768" height="1024" />
@@ -89,6 +88,7 @@
     
     
  <gap:splash src="hor.png" width="320" height="480" />   
+    <gap:splash src="hor.png"  gap:platform="android" gap:density="ldpi" />
 	 --> 
 
     <access origin="*" />
