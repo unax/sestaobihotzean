@@ -76,6 +76,7 @@
     <icon src="icon.png"         gap:platform="ios"        width="144" height="144" />
  <preference name="orientation" value="portrait" />
  <gap:splash src="ver.png" width="480" height="320" />
+ <gap:splash src="hor.png" width="320" height="480" />
     <!-- Define app splash screen for each platform.     
     <gap:splash src="hor.png"  gap:platform="android" gap:density="ldpi" />
     <gap:splash src="ver.png"  gap:platform="android" gap:density="mdpi" />
@@ -88,7 +89,7 @@
     
     
    
-	<gap:splash src="ver.png" width="320" height="480" /> --> 
+	 --> 
 
     <access origin="*" />
 
