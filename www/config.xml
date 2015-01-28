@@ -82,9 +82,9 @@
 
 <gap:splash src="hor.png" gap:platform="android" gap:density="xhdpi" width="1280" height="800" />
 <gap:splash src="hor.png" gap:platform="android" gap:density="xhdpi" width="1280" height="720" />
-<gap:splash src="hor.png"  gap:platform="android" gap:density="hdpi" width="800" height="480" />
-<gap:splash src="hor.png"  gap:platform="android" gap:density="mdpi" width="480" height="320" />
-<gap:splash src="hor.png"  gap:platform="android" gap:density="ldpi" width="320" height="200" />
+<gap:splash src="ver.png"  gap:platform="android" gap:density="hdpi" width="800" height="480" />
+<gap:splash src="ver.png"  gap:platform="android" gap:density="mdpi" width="480" height="320" />
+<gap:splash src="ver.png"  gap:platform="android" gap:density="ldpi" width="320" height="200" />
 
     <!-- Define app splash screen for each platform.     
     <gap:splash src="hor.png"  gap:platform="android" gap:density="ldpi" />
