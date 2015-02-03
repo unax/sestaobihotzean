@@ -115,7 +115,7 @@
 
     function capturePhoto() {
       // Take picture using device camera and retrieve image 
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80,         correctOrientation: true,
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 20,         correctOrientation: true,
         targetWidth: 800,
         targetHeight: 800,
 
@@ -125,8 +125,7 @@
     function getPhoto(source) {
 //	alert(source);
       // Retrieve image file location from specified source
-	     navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80, targetWidth: 800,
-        targetHeight: 800,
+	     navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 20, 
         destinationType: destinationType.FILE_URI,
         sourceType: source }); 
     }
