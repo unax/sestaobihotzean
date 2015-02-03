@@ -74,21 +74,22 @@
     <icon src="icon.png"            gap:platform="ios"        width="72" height="72" />
     <icon src="icon.png"         gap:platform="ios"        width="114" height="114" />
     <icon src="icon.png"         gap:platform="ios"        width="144" height="144" />
+ <preference name="orientation" value="portrait" />
+ <gap:splash src="ver.png" width="480" height="320" /><!-- este va bien en horizontal -->
 
-
-    <!-- Define app splash screen for each platform.      --> 
-    <gap:splash src="hor.png"  gap:platform="android" gap:density="ldpi" />
     <gap:splash src="hor.png"  gap:platform="android" gap:density="mdpi" />
-    <gap:splash src="hor.png"  gap:platform="android" gap:density="hdpi" /> 
 
-    <gap:splash src="ver.png"    gap:platform="ios"     width="320" height="480" />
-    <gap:splash src="ver.png" gap:platform="ios"     width="640" height="960" />
-    <gap:splash src="ver.png"      gap:platform="ios"     width="768" height="1024" />
-    <gap:splash src="ver.png"     gap:platform="ios"     width="1024" height="768" />
+    <!-- Define app splash screen for each platform.     
+    <gap:splash src="hor.png"  gap:platform="android" gap:density="hdpi" /> 
+    <gap:splash src="hor.png"    gap:platform="ios"     width="320" height="480" />
+    <gap:splash src="hor.png" gap:platform="ios"     width="640" height="960" />
+    <gap:splash src="hor.png"      gap:platform="ios"     width="768" height="1024" />
+    <gap:splash src="hor.png"     gap:platform="ios"     width="1024" height="768" />
     
     
-    <gap:splash src="hor.png" width="480" height="320" />
-	<gap:splash src="hor.png" width="320" height="480" />
+ <gap:splash src="hor.png" width="320" height="480" />   
+    <gap:splash src="hor.png"  gap:platform="android" gap:density="ldpi" />
+	 --> 
 
     <access origin="*" />
 
