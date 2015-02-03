@@ -25,11 +25,11 @@
 		  
 		var str = imageURI;
 		var imageURI = str.replace("file:///var/", "file://localhost/var/"); 
-	//	alert (imageURI);
+		alert (imageURI);
         var options = new FileUploadOptions();
         options.fileKey="file";
         options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
-	//	alert(options.fileName);
+		alert(options.fileName);
         options.mimeType="image/jpeg";
 
  
@@ -58,11 +58,7 @@
        //    alert(data);
       //  });
 	  
-		if ( document.getElementById("texto").value=="" || document.getElementById("titulo").value==""  ){
-		alert ("El título y el texto son campos obligatorios");
-		return false;
- 
-		}else{
+	  
 	  //correccion
 	          var options = new FileUploadOptions();
         options.fileKey = "file";
@@ -79,7 +75,7 @@
         }
 		   var ft = new FileTransfer();
         ft.upload(imageURI, encodeURI("http://www.sestaobihotzean.eus/participa-movil"), win, onFail, options);
-   }
+   
 		//correccion
 		/*
         var ft = new FileTransfer();
@@ -115,7 +111,7 @@
 
     function capturePhoto() {
       // Take picture using device camera and retrieve image 
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 20,         correctOrientation: true,
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80,         correctOrientation: true,
         targetWidth: 800,
         targetHeight: 800,
 
@@ -123,9 +119,10 @@
     }
 
     function getPhoto(source) {
-//	alert(source);
+	alert(source);
       // Retrieve image file location from specified source
-	     navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 20, 
+	     navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80, targetWidth: 800,
+        targetHeight: 800,
         destinationType: destinationType.FILE_URI,
         sourceType: source }); 
     }
@@ -139,7 +136,7 @@
         $("#status").fadeIn(); 
         $("#preloader").show();
         $("#preloader").fadeIn(3500);
-     //   alert(r.response);
+        alert(r.response);
         console.log("Code = " + r.responseCode);
         console.log("Response = " + r.response);
         console.log("Sent = " + r.bytesSent);
@@ -156,7 +153,7 @@
             //$("#camaras").slideUp("slow");
             
             }, delay);
-		 	alert('Enviado! Muchas gracias!');
+		//	alert('Enviado!');
 			location.href="index.html";
     }
         function cancelar() { 
@@ -189,7 +186,6 @@ var LocationOnSuccess = function(position) {
     console.log("Callback onsucces de geolocation");
     $("#lat").val(position.coords.latitude);
     $("#lon").val(position.coords.longitude);
-	 //alert (position.coords.longitude);  comprobar gps
     console.log('Latitude: '          + position.coords.latitude          + '\n' +
           'Longitude: '         + position.coords.longitude         + '\n' +
           'Altitude: '          + position.coords.altitude          + '\n' +
