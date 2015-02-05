@@ -60,8 +60,7 @@
 	  
 		if ( document.getElementById("texto").value=="" || document.getElementById("titulo").value==""  ){
 		alert ("El título y el texto son campos obligatorios");
-		return false;
- 
+		return;
 		}else{
 	  //correccion
 	          var options = new FileUploadOptions();
