@@ -188,7 +188,7 @@ var LocationOnSuccess = function(position) {
     console.log("Callback onsucces de geolocation");
     $("#lat").val(position.coords.latitude);
     $("#lon").val(position.coords.longitude);
-	 //alert (position.coords.longitude);  comprobar gps
+ alert (position.coords.longitude);  comprobar gps
     console.log('Latitude: '          + position.coords.latitude          + '\n' +
           'Longitude: '         + position.coords.longitude         + '\n' +
           'Altitude: '          + position.coords.altitude          + '\n' +
