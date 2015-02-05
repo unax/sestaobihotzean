@@ -24,6 +24,7 @@
          var imageURI = document.getElementById('image').src;
   var str = imageURI;
 var imageURI = str.replace("file:///var/", "file://localhost/var/"); 
+alert (imageURI);
         var options = new FileUploadOptions();
         options.fileKey="file";
         options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
@@ -39,6 +40,7 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
         var url = 'http://www.sestaobihotzean.eus/participa-movil';
         var form_data = {
             titulo: $("#titulo").val(),
+            email: $("#email").val(),
             lati: $("#lat").val(),
             longi: $("#lon").val(),
             categoria: $("#categoria").val(), 
@@ -47,13 +49,34 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
         };
         //alert($("#titulo").val());
         console.log("Hacemos el POST");
-        $.post(url, form_data, function(data) {
-            console.log("POST hecho");
-           alert(data);
-        });
+   //     $.post(url, form_data, function(data) {
+    //        console.log("POST hecho");
+       //    alert(data);
+      //  });
+	  
+	  
+	  //correccion
+	          var options = new FileUploadOptions();
+        options.fileKey = "file";
+        options.fileName = imageURI.substr(imageURI.lastIndexOf('/')+1);
+        options.mimeType = "image/jpeg";
+
+        options.params = {
+            titulo: document.getElementById("titulo").value,
+            email: document.getElementById("email").value,
+            lati: document.getElementById("lat").value,
+            longi: document.getElementById("lon").value,
+            texto: document.getElementById("texto").value,
+            categoria: document.getElementById("categoria").value
+        }
+		   var ft = new FileTransfer();
+        ft.upload(imageURI, encodeURI("http://www.sestaobihotzean.eus/participa-movil"), win, onFail, options);
+   
+		//correccion
+		/*
         var ft = new FileTransfer();
         console.log("Subimos la imagen");
-        ft.upload(imageURI, encodeURI("http://www.sestaobihotzean.eus/participa-movil"), win, onFail, options);
+        ft.upload(imageURI, encodeURI(""), win, onFail, options); */
         var pic1 = document.getElementById("image");
         // que hace esto??? if (image == typeof('image')) return;
         pic1.src = imageURI;
@@ -84,7 +107,7 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
 
     function capturePhoto() {
       // Take picture using device camera and retrieve image 
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,         correctOrientation: true,
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80,         correctOrientation: true,
         targetWidth: 800,
         targetHeight: 800,
 
@@ -93,17 +116,15 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
 
     function getPhoto(source) {
       // Retrieve image file location from specified source
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,         correctOrientation: true,
-        targetWidth: 800,
-        targetHeight: 800,
+	     navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
         destinationType: destinationType.FILE_URI,
-        sourceType: source });
+        sourceType: source }); 
     }
 
     // Called if something bad happens.
     // 
     function onFail(message) {
-      alert('Failed because: ' + message);
+    //  alert('Failed because: ' + message);
     }
     function win(r) {
         $("#status").fadeIn(); 
@@ -119,13 +140,14 @@ var imageURI = str.replace("file:///var/", "file://localhost/var/");
             $("#status").fadeOut(); 
             $("#preloader").fadeOut(1500); 
             $("#titulo").val("");
+            $("#email").val("");
             $("#categoria").val("");
             $("#texto").val("");
             $("#image").attr("src","second.jpg");
             //$("#camaras").slideUp("slow");
             
             }, delay);
-			alert('Enviado!');
+		//	alert('Enviado!');
 			location.href="index.html";
     }
         function cancelar() { 
