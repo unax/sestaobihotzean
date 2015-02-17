@@ -30,57 +30,24 @@
 <link href="styles/retina.css" rel="stylesheet" type="text/css" media="only screen and (-webkit-min-device-pixel-ratio: 2)" />
 <!-- JS propio -->
 <script type="text/javascript" charset="utf-8" src="app.js"></script> 
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
+ 
+<script type="text/javascript" charset="utf-8" src="app.js"></script> 
+ 
+
+<script src="http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.4.min.js"></script>
+<script src="js/jquery.splashscreen.js"></script>
+<script src="js/script.js"></script>
+
+<style>
+	#splashScreen { width: 100%; }
+	#splashScreen img { width: 100%; }
+</style>
 
 </head>
 <body>
-<div id="preloader"  style="display:none;">
-	<div id="status">
-    	<p class="center-text">
-			<em>Enviando foto...</em>
-            <em>La carga depende de la velocidad de tu conexión</em>
-        </p>
-       </div>
-</div>
-
-<div class="header-decoration"></div>
-
-<div class="landing-header">
-	<img class="landing-logo replace-2x" src="images/logo/logo.png"  alt="img" width="148">
-</div>
-
-<center> 
-    <form id="noticia" action="" method="post">
  
-            <input type="hidden" name="URI" id="URI" value="" />
-            <input type="text" name="titulo" id="titulo" placeholder="Título del post" required="required" />
-            <input type="text" name="email" id="email" placeholder="Tu email" required="required" />
-            <select id="categoria" name="categoria"> 
-                <option value="7">Lugares</option> 
-                <option value="12">Antes aquí había</option> 
-                <option value="13">Recuerdos</option> 
-                <option value="14">Personas</option>
-                <option value="15">Trabajo</option>
-                <option value="16">Momentos especiales</option> 
-                <option value="17">Hechos históricos</option> 
-                <option value="18">Mi rincón favorito de Sestao</option> 
-                <option value="19">Sestao bihotzean</option> 
-                <option value="20">Selfie</option> 
-                <option value="21">No sé dónde ponerlo</option> 
-            </select>
-            <br>
-            <textarea name="texto" id="texto" placeholder="Texto del post" required="required"></textarea>
-            <input type="text" name="lat" id="lat" placeholder="Latitud"/>
-            <input type="text" name="lon" id="lon" placeholder="Longitud"/> 
-       </form>
-</center>
-
-<div class="header-decoration"></div>
-<center id="camaras">
-    <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);" class="demo-button button-minimal black-minimal">Elige foto</button>
-    <button onclick="capturePhoto();" class="demo-button button-minimal black-minimal">Haz foto</button>
-    <button onclick="uploadPhoto();" class="demo-button button-minimal black-minimal" id="botonenvio"  style="display:none;">Enviar</button>
-    <button onclick="cancelar();" class="demo-button button-minimal black-minimal"  id="botoncancela"  style="display:none;">Cancelar</button>
-    <img src="" id="image" width="150"  style="display:none;"><br>
-</center>
+    <div id="promoIMG" style='width: 100% !important; text-align: center !important;'>
+    </div> 
 </body>
 </html>

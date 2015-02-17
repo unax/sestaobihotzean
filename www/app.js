@@ -16,19 +16,36 @@
         });*/
         
         donde_estoy();
-        
+            $('#email').change(function() {
+        var sEmail = $('#email').val();
+        if ($.trim(sEmail).length == 0) {
+            alert('Please enter valid email address');
+            e.preventDefault();
+        }
+        if (validateEmail(sEmail)) {
+            alert('Email is valid');
+        }
+        else {
+            alert('Invalid Email Address');
+            e.preventDefault();
+        }
+    });
     }
     
         function uploadPhoto(imageURI2) {
 		        $("#preloader").show();
-         var imageURI = document.getElementById('image').src;
-  var str = imageURI;
-var imageURI = str.replace("file:///var/", "file://localhost/var/"); 
-alert (imageURI);
+         var imageURI = document.getElementById('image').getAttribute("src");
+		  
+		var str = imageURI;
+		var imageURI = str.replace("file:///var/", "file://localhost/var/"); 
+	//	alert (imageURI);
         var options = new FileUploadOptions();
         options.fileKey="file";
         options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+	//	alert(options.fileName);
         options.mimeType="image/jpeg";
+
+ 
 
         var params = new Object();
         params.value1 = "test";
@@ -54,7 +71,11 @@ alert (imageURI);
        //    alert(data);
       //  });
 	  
-	  
+		if ( document.getElementById("texto").value=="" || document.getElementById("titulo").value==""  ){
+		alert ("El título y el texto son campos obligatorios");
+		return false;
+ 
+		}else{
 	  //correccion
 	          var options = new FileUploadOptions();
         options.fileKey = "file";
@@ -71,7 +92,7 @@ alert (imageURI);
         }
 		   var ft = new FileTransfer();
         ft.upload(imageURI, encodeURI("http://www.sestaobihotzean.eus/participa-movil"), win, onFail, options);
-   
+   }
 		//correccion
 		/*
         var ft = new FileTransfer();
@@ -115,8 +136,9 @@ alert (imageURI);
     }
 
     function getPhoto(source) {
+//	alert(source);
       // Retrieve image file location from specified source
-	     navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+	     navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80, 
         destinationType: destinationType.FILE_URI,
         sourceType: source }); 
     }
@@ -130,7 +152,7 @@ alert (imageURI);
         $("#status").fadeIn(); 
         $("#preloader").show();
         $("#preloader").fadeIn(3500);
-        
+     //   alert(r.response);
         console.log("Code = " + r.responseCode);
         console.log("Response = " + r.response);
         console.log("Sent = " + r.bytesSent);
@@ -147,11 +169,11 @@ alert (imageURI);
             //$("#camaras").slideUp("slow");
             
             }, delay);
-		//	alert('Enviado!');
-			location.href="index.html";
+		 	alert('Enviado! Muchas gracias!');
+			location.href="indexes.html";
     }
         function cancelar() { 
-				location.href='index.html';
+				location.href='indexes.html';
     }
 
 //Opciones de geolocalizacion
@@ -180,6 +202,7 @@ var LocationOnSuccess = function(position) {
     console.log("Callback onsucces de geolocation");
     $("#lat").val(position.coords.latitude);
     $("#lon").val(position.coords.longitude);
+	 //alert (position.coords.longitude);  comprobar gps
     console.log('Latitude: '          + position.coords.latitude          + '\n' +
           'Longitude: '         + position.coords.longitude         + '\n' +
           'Altitude: '          + position.coords.altitude          + '\n' +

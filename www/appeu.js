@@ -16,7 +16,20 @@
         });*/
         
         donde_estoy();
-        
+            $('#email').change(function() {
+        var sEmail = $('#email').val();
+        if ($.trim(sEmail).length == 0) {
+            alert('Please enter valid email address');
+            e.preventDefault();
+        }
+        if (validateEmail(sEmail)) {
+            alert('Email is valid');
+        }
+        else {
+            alert('Invalid Email Address');
+            e.preventDefault();
+        }
+    });
     }
     
         function uploadPhoto(imageURI2) {
@@ -54,7 +67,7 @@
 		
 		if ( document.getElementById("texto").value=="" || document.getElementById("titulo").value==""  ){
 		alert ("El título y el texto son campos obligatorios");
-		return;
+		return false;
  
 		}else{
 	  //correccion
@@ -152,10 +165,10 @@
             
             }, delay);
 		 	alert('Bidalita! Eskerrik asko!');
-			location.href="index.html";
+			location.href="indexeu.html";
     }
         function cancelar() { 
-				location.href='index.html';
+				location.href='indexeu.html';
     }
 
 //Opciones de geolocalizacion
