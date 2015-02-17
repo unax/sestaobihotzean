@@ -33,7 +33,8 @@
     }
     
         function uploadPhoto(imageURI2) {
-		        $("#preloader").show();
+		   	  
+     $("#preloader").show();
          var imageURI = document.getElementById('image').getAttribute("src");
 		  
 		var str = imageURI;
@@ -70,12 +71,7 @@
     //        console.log("POST hecho");
        //    alert(data);
       //  });
-	  
-		if ( document.getElementById("texto").value=="" || document.getElementById("titulo").value==""  ){
-		alert ("El título y el texto son campos obligatorios");
-		return false;
- 
-		}else{
+
 	  //correccion
 	          var options = new FileUploadOptions();
         options.fileKey = "file";
@@ -92,7 +88,7 @@
         }
 		   var ft = new FileTransfer();
         ft.upload(imageURI, encodeURI("http://www.sestaobihotzean.eus/participa-movil"), win, onFail, options);
-   }
+  
 		//correccion
 		/*
         var ft = new FileTransfer();
@@ -138,9 +134,14 @@
     function getPhoto(source) {
 //	alert(source);
       // Retrieve image file location from specified source
+	  	if ( document.getElementById("texto").value=="" || document.getElementById("titulo").value==""  ){
+		alert ("El título y el texto son campos obligatorios");
+		return false;
+ 
+		}else{
 	     navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80, 
         destinationType: destinationType.FILE_URI,
-        sourceType: source }); 
+        sourceType: source }); }
     }
 
     // Called if something bad happens.
